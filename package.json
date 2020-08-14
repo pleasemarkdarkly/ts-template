@@ -10,7 +10,7 @@
     "build": "rm -rf build && tsc",
     "clean": "rm -rf node_modules build yarn-error.log",
     "dev": "ts-node-dev --no-notify --clear src",
-    "save": "git --git-dir=./.git-github add . && echo Enter commit message && read && git --git-dir=./.git-github commit -m \":octocat: ${REPLY}\" && git --git-dir=./.git-github push",
+    "save": "gits add . && echo Enter commit message && read && gits commit -m \":octocat: ${REPLY}\" && gits push",
     "start": "node ./dist/index.js"
   },
   "keywords": [],
