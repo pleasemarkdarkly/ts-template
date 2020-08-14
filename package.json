@@ -1,0 +1,39 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "description": "description",
+  "author": "Mark Phillips <pretty@pleasemarkdarkly.com>",
+  "main": "index.js",
+  "scripts": {
+    "lint": "pretty-quick --staged && lint-staged",
+    "build": "rm -rf build && tsc",
+    "dev": "ts-node-dev --transpileOnly --no-notify --clear src",
+    "git-save": "git add . && echo Enter commit message && read && git commit -m \":octocat: ${REPLY}\" && git push"
+  },
+  "scripts": {
+    "lint":"pretty-quick --staged && lint-staged"
+  },
+  "dependencies": {
+    "gts": "^2.0.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.9.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix"
+  }
+}
